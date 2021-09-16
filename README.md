@@ -1,2 +1,3 @@
 ## Ietian's Diary 
-New Application
+
+Ietian's Diary from Scratch
