@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ietians-diary</string>
+    <string name="sign_in_hero_text">Let\'s get you started,\n Sign in below to continue.</string>
+    <string name="button_text">Sign In with Google</string>
+    <string name="terms_and_conditions_1">*By signing in you agree to our </string>
+    <string name="terms_and_conditions_2"><u><![CDATA[terms & conditions]]></u></string>
 </resources>
