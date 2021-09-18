@@ -1,5 +1,7 @@
 package com.iet.ietians_diary;
 
+public class SignIn {
+}
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
