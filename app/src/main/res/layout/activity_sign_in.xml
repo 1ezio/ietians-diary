@@ -30,12 +30,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heroImage"/>
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/dw_signin_button_bg"
+
         android:text="@string/button_text"
         android:fontFamily="@font/open_sans"
         android:textStyle="bold"

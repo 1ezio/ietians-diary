@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "272639447829",
+    "firebase_url": "https://ietian-s-diary.firebaseio.com",
+    "project_id": "ietian-s-diary",
+    "storage_bucket": "ietian-s-diary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272639447829:android:7b66d7fa601549cb",
+        "android_client_info": {
+          "package_name": "com.example.ietiansdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272639447829-frhq8658p8tsssphrhh1ua7vhuuu7860.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ietiansdiary",
+            "certificate_hash": "ff3ebb3af8fa91d66e0de65c7bb536cb00382ef6"
+          }
+        },
+        {
+          "client_id": "272639447829-kvsu2su11p1apj59bf7adb6q25hjgk00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ietiansdiary",
+            "certificate_hash": "c34d5331c603573bc405695c7a0d604cdbb9fed2"
+          }
+        },
+        {
+          "client_id": "272639447829-uvmlgd9l684dbkmcmlidqkvhkjnphg83.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ietiansdiary",
+            "certificate_hash": "fc4431c65750f5e6e067f934dc4d52c727b4c9f5"
+          }
+        },
+        {
+          "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmfxNmBdTs4BcCJTr5ntwU0rsCNmQpIBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272639447829:android:50ef7943e1e24d7bf94f1c",
+        "android_client_info": {
+          "package_name": "com.iet.ietians_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272639447829-44q5b3b8up5l7bskhndl5dkaos0f2f2p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iet.ietians_diary",
+            "certificate_hash": "68059e64acb30861f853649f60eb46aad30ebede"
+          }
+        },
+        {
+          "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmfxNmBdTs4BcCJTr5ntwU0rsCNmQpIBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272639447829:android:5180a60852d96549",
+        "android_client_info": {
+          "package_name": "com.iet.ietiansdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272639447829-17i2sdrg47rhcs1paiue5brjvt8r28d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iet.ietiansdiary",
+            "certificate_hash": "ff3ebb3af8fa91d66e0de65c7bb536cb00382ef6"
+          }
+        },
+        {
+          "client_id": "272639447829-28hqclr1cmj040rpesrl4q3ctleptlvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iet.ietiansdiary",
+            "certificate_hash": "7ecf7ffc2e7df27e586e0217b20b0d59181c8cee"
+          }
+        },
+        {
+          "client_id": "272639447829-c0na457d0edvobbh4d50ljskquhprp9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iet.ietiansdiary",
+            "certificate_hash": "c34d5331c603573bc405695c7a0d604cdbb9fed2"
+          }
+        },
+        {
+          "client_id": "272639447829-uef13ng7ik0vq9umbnicqtgn0itdto6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iet.ietiansdiary",
+            "certificate_hash": "fc4431c65750f5e6e067f934dc4d52c727b4c9f5"
+          }
+        },
+        {
+          "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmfxNmBdTs4BcCJTr5ntwU0rsCNmQpIBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272639447829-set69me9upbld0v19m6l1327143a5lsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6028758234054822~8044560729"
+    }
+  ],
+  "configuration_version": "1"
+}
