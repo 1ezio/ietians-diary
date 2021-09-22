@@ -34,7 +34,7 @@
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/dw_signin_button_bg"
 
         android:text="@string/button_text"
@@ -44,6 +44,7 @@
         android:textAllCaps="false"
         android:textColor="@color/text_black_400"
         android:drawableLeft="@raw/google_icon"
+        android:foreground="?android:attr/selectableItemBackground"
         android:drawablePadding="5dp"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
