@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard">
 
+    <include layout="@layout/component_bottom_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
