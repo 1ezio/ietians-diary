@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/llFeatureImageBG"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:background="@drawable/feature_icon_bg">
+
+    <ImageView
+        android:id="@+id/ivFeatureImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_syllabus"
+        android:contentDescription="@string/feature_icon"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFeatureDescriptionContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/llFeatureImageBG">
+
+        <TextView
+            android:id="@+id/tvFeatureTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Syllabus"
+            android:fontFamily="@font/poppins_medium"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvFeatureDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem Ipsum is \nsimpledummy text."
+            android:fontFamily="@font/poppins"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/llFeatureImageBG"
+        app:layout_constraintBottom_toBottomOf="@+id/llFeatureImageBG"
+        android:layout_marginEnd="17dp"
+        android:src="@drawable/ic_square_next"
+        android:background="@android:color/transparent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
