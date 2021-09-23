@@ -37,3 +37,5 @@
 .cxx
 local.properties
 google-services.json
+
+/app/src/main/res/values/keys.xml
