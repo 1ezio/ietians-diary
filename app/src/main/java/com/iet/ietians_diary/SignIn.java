@@ -68,7 +68,6 @@ public class SignIn extends AppCompatActivity {
         });
 
 
-
         // [END initialize_auth]
     }
 
