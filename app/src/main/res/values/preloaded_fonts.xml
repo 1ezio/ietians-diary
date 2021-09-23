@@ -4,5 +4,7 @@
         <item>@font/open_sans</item>
         <item>@font/poppins</item>
         <item>@font/poppins_bold</item>
+        <item>@font/poppins_light</item>
+        <item>@font/poppins_medium</item>
     </array>
 </resources>
