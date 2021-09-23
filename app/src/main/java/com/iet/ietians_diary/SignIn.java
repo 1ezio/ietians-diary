@@ -124,7 +124,7 @@ public class SignIn extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
 
-        Toast.makeText(getApplicationContext(), "Name" + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Name " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
         
         //TODO Intent After Login
         Intent intent = new Intent(SignIn.this, Dashboard.class);
