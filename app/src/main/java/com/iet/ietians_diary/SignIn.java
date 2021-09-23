@@ -78,7 +78,10 @@ public class SignIn extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        if(currentUser != null)
+        {
+            updateUI(currentUser);
+        }
     }
     // [END on_start_check_user]
 
@@ -135,9 +138,10 @@ public class SignIn extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
 
         //TODO Intent After Login
-
+            Intent intent = new Intent(SignIn.this, Dashboard.class);
+            startActivity(intent);
+            finish();
     }
-
 
 }
 
