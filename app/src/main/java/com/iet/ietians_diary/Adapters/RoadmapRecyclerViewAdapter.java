@@ -10,18 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.iet.ietians_diary.Models.RoadmapModels;
+import com.iet.ietians_diary.Models.RoadmapModel;
 import com.iet.ietians_diary.R;
-import com.iet.ietians_diary.RoadMap;
 
 import java.util.ArrayList;
 
 public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecyclerViewAdapter.viewHolder>{
     
-    ArrayList<RoadmapModels> list;
+    ArrayList<RoadmapModel> list;
     Context context;
 
-    public RoadmapRecyclerViewAdapter(ArrayList<RoadmapModels> list, Context context) {
+    public RoadmapRecyclerViewAdapter(ArrayList<RoadmapModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -35,7 +34,7 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        RoadmapModels model = list.get(position);
+        RoadmapModel model = list.get(position);
 
         holder.name.setText(model.getName());
         holder.constraintLayout.setBackgroundResource(model.getBgColor());
