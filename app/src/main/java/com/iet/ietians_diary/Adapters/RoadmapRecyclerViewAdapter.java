@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.iet.ietians_diary.Models.RoadmapModels;
@@ -35,7 +36,9 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         RoadmapModels model = list.get(position);
+
         holder.name.setText(model.getName());
+        holder.constraintLayout.setBackgroundResource(model.getBgColor());
     }
 
     @Override
@@ -46,10 +49,12 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
 
     public class viewHolder extends RecyclerView.ViewHolder{
         TextView name;
+        ConstraintLayout constraintLayout;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tvName);
+            constraintLayout = itemView.findViewById(R.id.clRoadmapCard);
 
         }
 
