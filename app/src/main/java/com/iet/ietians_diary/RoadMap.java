@@ -1,45 +1,47 @@
 package com.iet.ietians_diary;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
 import com.iet.ietians_diary.Adapters.RoadmapRecyclerViewAdapter;
-import com.iet.ietians_diary.Models.RoadmapModels;
+import com.iet.ietians_diary.Models.RoadmapModel;
 
 import java.util.ArrayList;
 
 public class RoadMap extends AppCompatActivity {
 
+    RecyclerView roadmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_map);
-        RecyclerView roadmap;
+
         roadmap = findViewById(R.id.roadmap_recyclerView);
         roadmap.setNestedScrollingEnabled(false);
-        ArrayList<RoadmapModels> list = new ArrayList<>();
-        list.add(new RoadmapModels("Android"));
-        list.add(new RoadmapModels("Kotlin"));
-        list.add(new RoadmapModels("Java"));
-        list.add(new RoadmapModels("Ruby"));
-        list.add(new RoadmapModels("Javascript"));
-        list.add(new RoadmapModels("Apple"));
-        list.add(new RoadmapModels("Google"));
-        list.add(new RoadmapModels("Mango"));
-        list.add(new RoadmapModels("Microsoft"));
-        list.add(new RoadmapModels("Dell"));
-        list.add(new RoadmapModels("Michael Jordan"));
-        list.add(new RoadmapModels("Nike"));
-        list.add(new RoadmapModels("Casio"));
-        list.add(new RoadmapModels("Orange"));
+
+        ArrayList<RoadmapModel> list = new ArrayList<>();
+        list.add(new RoadmapModel("Android",R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("Kotlin", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("Java", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("Ruby", R.drawable.feature_roadmap_bg_grey));
+        list.add(new RoadmapModel("Javascript", R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("Apple", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("Google", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("Mango", R.drawable.feature_roadmap_bg_grey));
+        list.add(new RoadmapModel("Microsoft", R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("Dell", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("Amazon", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("Flipkart", R.drawable.feature_roadmap_bg_grey));
 
         RoadmapRecyclerViewAdapter RoadmapAdapter = new RoadmapRecyclerViewAdapter(list, RoadMap.this);
         roadmap.setAdapter(RoadmapAdapter);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(RoadMap.this, 2);
-        roadmap.setLayoutManager(gridLayoutManager);
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        roadmap.setLayoutManager(staggeredGridLayoutManager);
 
     }
 }
