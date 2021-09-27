@@ -202,7 +202,7 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="Join Now"
