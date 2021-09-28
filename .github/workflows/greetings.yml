@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Hey, seems like you are interacting for the first time with our community! Feel free to ask any questions by commenting on this issue or if you want to contribute head over to the CONTRIBUTIONS.md file for the guidelines. Happy Contributing :)'
+        pr-message: 'Hey, looks like it is your first PR with us! Please make sure you have read the CONTRIBUTIONS.md file. Feel free to ask any doubts by commenting on this PR or reach out to us on our discord server. Happy Contributing :)'
