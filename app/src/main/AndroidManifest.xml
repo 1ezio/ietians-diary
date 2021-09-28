@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ietiansdiary">
+        <activity android:name=".Internship"></activity>
+        <activity android:name=".LabAssignment" />
+        <activity android:name=".StudyMaterial" />
+        <activity android:name=".Syllabus" />
         <activity
             android:name=".RoadMap"
             android:exported="true" />
@@ -20,6 +24,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
