@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelectDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/btnBackwordArrowSelectDetails"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/backword_arrow"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:fontFamily="@font/poppins"
+            android:layout_toRightOf="@id/btnBackwordArrowSelectDetails"
+            android:textColor="@color/text_black_400"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/btnNotificationRing"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/notification_ring"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentEnd="true">
+        </ImageView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Branch"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text_black_400"
+        android:textSize="22dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnSelectBranchCS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CS"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectBranchIT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="IT"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectBranchETC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ETC"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectBranchEI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EI"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnSelectBranchMechanical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mech."
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="18dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectBranchCivil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Civil"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Semester"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/text_black_400"
+        android:textSize="22dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_select_semester_1st"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1st"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester2nd"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2nd"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester3rd"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3rd"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester_4th"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4th"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnSelectSemester5th"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5th"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester6th"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6th"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester7th"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7th"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:id="@+id/btnSelectSemester8th"
+            android:textAllCaps="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8th"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/text_black_400"
+            android:background="@drawable/dw_select_details_bg"
+            android:backgroundTint="@null"
+            android:textSize="20dp">
+        </Button>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNextFromSelectBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:backgroundTint="@color/peach_red_400"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp">
+    </Button>
+
+</LinearLayout>

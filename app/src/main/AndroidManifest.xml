@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ietiansdiary">
+        <activity android:name=".SelectDetails"></activity>
         <activity
             android:name=".RoadMap"
             android:exported="true" />
