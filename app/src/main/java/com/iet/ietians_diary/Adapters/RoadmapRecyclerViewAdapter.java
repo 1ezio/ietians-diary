@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,12 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
 
         holder.name.setText(model.getName());
         holder.constraintLayout.setBackgroundResource(model.getBgColor());
+        if(position %2 ==0){
+            holder.linearLayout.setPadding(0,16,16,16);
+        }
+        else {
+            holder.linearLayout.setPadding(16,16,0,16);
+        }
     }
 
     @Override
@@ -49,11 +56,13 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
     public class viewHolder extends RecyclerView.ViewHolder{
         TextView name;
         ConstraintLayout constraintLayout;
+        LinearLayout linearLayout;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tvName);
             constraintLayout = itemView.findViewById(R.id.clRoadmapCard);
+            linearLayout = itemView.findViewById(R.id.llContainer);
 
         }
 

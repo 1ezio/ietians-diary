@@ -3,6 +3,7 @@ package com.iet.ietians_diary;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -72,7 +73,7 @@ public class RoadmapFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_roadmap, container, false);
 
         RecyclerView roadmap = rootView.findViewById(R.id.roadmap_recyclerView);
-        roadmap.setLayoutManager(new LinearLayoutManager(getActivity()));
+        roadmap.setLayoutManager(new GridLayoutManager(getActivity(),2));
         roadmap.setNestedScrollingEnabled(false);
 
         ArrayList<RoadmapModel> list = new ArrayList<>();
@@ -92,8 +93,8 @@ public class RoadmapFragment extends Fragment {
         RoadmapRecyclerViewAdapter RoadmapAdapter = new RoadmapRecyclerViewAdapter(list, getContext());
         roadmap.setAdapter(RoadmapAdapter);
 
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        roadmap.setLayoutManager(staggeredGridLayoutManager);
+//        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+//        roadmap.setLayoutManager(staggeredGridLayoutManager);
 
         // Inflate the layout for this fragment
         return rootView;
