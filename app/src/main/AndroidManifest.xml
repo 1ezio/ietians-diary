@@ -18,12 +18,6 @@
         <activity android:name=".Syllabus" />
         <activity android:name=".SelectDetails"></activity>
         <activity
-            android:name=".RoadMap"
-            android:exported="true" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="true" />
-        <activity
             android:name=".SplashScreen"
             android:exported="true" >
             <intent-filter>
