@@ -27,12 +27,6 @@ public class RoadMap extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_map);
 
-//        dynamicContent = findViewById(R.id.contentContainer);
-//        bottomNav = findViewById(R.id.bottomNavContainer);
-//
-//        View wizard = getLayoutInflater().inflate(R.layout.activity_road_map, null);
-//        dynamicContent.addView(wizard);
-
         ColorStateList iconColorStates = new ColorStateList(
                 new int[][]{
                         new int[]{-android.R.attr.state_checked},
@@ -42,12 +36,6 @@ public class RoadMap extends BaseActivity {
                         getResources().getColor(R.color.text_black_200),
                         getResources().getColor(R.color.text_black_400)
                 });
-
-//        bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setSelectedItemId(R.id.favorite);
-//        bottomNavigationView.setItemIconTintList(iconColorStates);
-//        bottomNavigationView.setItemTextColor(iconColorStates);
-
 
         roadmap = findViewById(R.id.roadmap_recyclerView);
         roadmap.setNestedScrollingEnabled(false);
