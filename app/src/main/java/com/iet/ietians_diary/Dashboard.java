@@ -15,7 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends BaseActivity {
 
-    private Button toRoad;
     private ConstraintLayout dynamicContent, bottomNav;
     private BottomNavigationView bottomNavigationView;
 
