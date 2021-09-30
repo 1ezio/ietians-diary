@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="Discussion Forum"
+            android:text="@string/discussion_forum"
             android:textSize="22sp"
             android:fontFamily="@font/poppins_medium"/>
 
@@ -57,7 +57,7 @@
             android:background="@drawable/feature_discussion_forum_textview_bg"
             app:layout_constraintTop_toBottomOf="@id/tvDescription"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="interviews"
+            android:text="@string/Interviews"
             android:textSize="11sp"
             android:textAllCaps="false"/>
 
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toTopOf="@id/tvInterview"
             app:layout_constraintBottom_toBottomOf="@id/tvInterview"
             app:layout_constraintStart_toEndOf="@id/tvInterview"
-            android:text="exams"
+            android:text="@string/Exams"
             android:textSize="11sp"
             android:textAllCaps="false"/>
 
@@ -205,7 +205,7 @@
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Join Now"
+            android:text="@string/join_now"
             android:textSize="11sp"
             android:fontFamily="@font/poppins"
             android:textColor="@color/white"
