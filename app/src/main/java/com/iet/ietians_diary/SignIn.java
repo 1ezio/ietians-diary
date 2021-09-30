@@ -128,8 +128,8 @@ public class SignIn extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Name " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
         
-        //TODO Intent After Login
-        Intent intent = new Intent(SignIn.this, Dashboard.class);
+        // TODO Intent After Login
+        Intent intent = new Intent(SignIn.this, BaseActivity.class);
         startActivity(intent);
         finish();
     }

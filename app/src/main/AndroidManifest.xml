@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iet.ietians_diary">
+    package="com.iet.ietians_diary" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ietiansdiary">
+        android:theme="@style/Theme.Ietiansdiary" >
+        <activity
+            android:name=".BaseActivity"
+            android:exported="true" />
         <activity
             android:name=".RoadMap"
             android:exported="true" />
@@ -17,13 +20,14 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn">
+        <activity android:name=".SignIn" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
