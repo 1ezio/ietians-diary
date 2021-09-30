@@ -20,6 +20,8 @@ public class Dashboard extends BaseActivity {
     private BottomNavigationView bottomNavigationView;
 
 
+    Button toRoad, toSyllabus, toStudyMaterial, toLabAssign, toInternships;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,5 +57,36 @@ public class Dashboard extends BaseActivity {
             }
         });
 
+        toSyllabus=findViewById(R.id.buttonToSyllabus);
+        toSyllabus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Syllabus.class));
+            }
+        });
+
+        toStudyMaterial=findViewById(R.id.buttonToStudyMaterial);
+        toStudyMaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, StudyMaterial.class));
+            }
+        });
+
+        toLabAssign=findViewById(R.id.buttonToLabAssign);
+        toLabAssign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, LabAssignment.class));
+            }
+        });
+
+        toInternships=findViewById(R.id.buttonToInternships);
+        toInternships.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Internship.class));
+            }
+        });
     }
 }

@@ -12,6 +12,11 @@
         <activity
             android:name=".BaseActivity"
             android:exported="true" />
+        <activity android:name=".Internship"></activity>
+        <activity android:name=".LabAssignment" />
+        <activity android:name=".StudyMaterial" />
+        <activity android:name=".Syllabus" />
+        <activity android:name=".SelectDetails"></activity>
         <activity
             android:name=".RoadMap"
             android:exported="true" />
