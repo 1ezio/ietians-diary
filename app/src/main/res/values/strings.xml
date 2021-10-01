@@ -25,5 +25,6 @@
     <string name="to_studymaterial">toStudyMaterial</string>
     <string name="to_labassignments">toLabAssignments</string>
     <string name="to_internships">toInternships</string>
+    <string name="all_features">ALL FEATURES</string>
 
 </resources>
