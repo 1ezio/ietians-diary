@@ -10,11 +10,61 @@
         android:id="@+id/buttonToRoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="toRoadmap"
+        android:text="@string/to_roadmap"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToSyllabus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185" />
+
+    <Button
+        android:id="@+id/buttonToSyllabus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_syllabus"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToStudyMaterial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToRoad"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <Button
+        android:id="@+id/buttonToStudyMaterial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_studymaterial"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToLabAssign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToSyllabus"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <Button
+        android:id="@+id/buttonToLabAssign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_labassignments"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToInternships"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToStudyMaterial"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <Button
+        android:id="@+id/buttonToInternships"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_internships"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonToLabAssign" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

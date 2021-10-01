@@ -7,43 +7,44 @@
     android:orientation="vertical"
     tools:context=".SelectDetails">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/btnBackwordArrowSelectDetails"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:src="@drawable/backword_arrow"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true">
-        </ImageView>
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="45dp"-->
+<!--        android:padding="10dp">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select"
-            android:fontFamily="@font/poppins"
-            android:layout_toRightOf="@id/btnBackwordArrowSelectDetails"
-            android:textColor="@color/text_black_400"
-            android:textSize="16sp"
-            android:layout_marginLeft="10dp">
-        </TextView>
+<!--        <ImageView-->
+<!--            android:id="@+id/btnBackwordArrowSelectDetails"-->
+<!--            android:layout_width="18dp"-->
+<!--            android:layout_height="18dp"-->
+<!--            android:src="@drawable/backword_arrow"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_centerVertical="true">-->
+<!--        </ImageView>-->
 
-        <ImageView
-            android:id="@+id/btnNotificationRing"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:src="@drawable/notification_ring"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
-            android:layout_alignParentEnd="true">
-        </ImageView>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Select"-->
+<!--            android:fontFamily="@font/poppins"-->
+<!--            android:layout_toRightOf="@id/btnBackwordArrowSelectDetails"-->
+<!--            android:textColor="@color/text_black_400"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_marginLeft="10dp">-->
+<!--        </TextView>-->
 
-    </RelativeLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/btnNotificationRing"-->
+<!--            android:layout_width="22dp"-->
+<!--            android:layout_height="22dp"-->
+<!--            android:src="@drawable/notification_ring"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:layout_alignParentEnd="true">-->
+<!--        </ImageView>-->
+
+<!--    </RelativeLayout>-->
 
     <TextView
         android:layout_width="match_parent"
@@ -301,12 +302,14 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:textSize="20dp"
-        android:padding="8dp"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
         android:backgroundTint="@color/peach_red_400"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="60dp"
+        android:drawableEnd="@drawable/ic_square_next_white">
     </Button>
 
 </LinearLayout>
