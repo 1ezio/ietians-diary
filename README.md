@@ -93,7 +93,7 @@ Here's how to generate a [Personal Access Token](https://docs.github.com/en/auth
 - Open terminal/cmd and run these commands
 
   - `git checkout -B branch_name` create and checkout a new branch
-  - `git add .` tage your changes
+  - `git add .` stage your changes
   - `git commit -m "your commit message"` commit your changes
   - `git push origin branch_name` push changes to github
 
@@ -101,21 +101,21 @@ Here's how to generate a [Personal Access Token](https://docs.github.com/en/auth
   ![compare&pull](https://user-images.githubusercontent.com/43697446/134040805-c114ccf9-aa14-427e-b01f-8dcb2f58ef94.png)
 
 - Describe the issue you fixed and how you did it and click on make a PR.
-- Wait for the reviewerws to approve and merge it.
+- Wait for the reviewers to approve and merge it.
 
-### And that's it, you're done! We're looking forward to having wonderful contributors with us
+#### And that's it, you're done! We're looking forward to having wonderful contributors with us
 
-## Here are some useful links you can refer to
+### Here are some useful links you can refer to
 
-### [Figma Design File](https://www.figma.com/file/ZH1dsdzj2Fcwt3zrX6BQ5b/Ietian's-Diary)
+#### [Figma Design File](https://www.figma.com/file/ZH1dsdzj2Fcwt3zrX6BQ5b/Ietian's-Diary)
 
-### [Figma Jam File](https://www.figma.com/file/oZBtdUazZWgcdvKsjUC90E/Ietians-Diary?node-id=0%3A1)
+#### [Figma Jam File](https://www.figma.com/file/oZBtdUazZWgcdvKsjUC90E/Ietians-Diary?node-id=0%3A1)
 
 <br>
 
 ### Tech Stack
 
-[![android](https://www.vectorlogo.zone/logos/android/android-ar21.svg)](https://developer.android.com)
+[![android](https://www.vectorlogo.zone/util/preview.html?image=/logos/android/android-tile.svg)](https://developer.android.com)
 [![firebase](https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg)](https://firebase.google.com/)
 
 ### Contributors
