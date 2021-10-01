@@ -43,7 +43,7 @@ Android Studio is the official Integrated Development Environment (IDE) for Andr
 
 # How to contribute
 
-We're open to any kind of contribution, just the follow the steps and you're good to go!
+We're open to any kind of contribution, just follow the steps and you're good to go!
 
 ## Issues
 
@@ -70,21 +70,21 @@ Here's how to generate a [Personal Access Token](https://docs.github.com/en/auth
 #### Creating Project
 
 - Here's how to [create](https://codinglatte.com/posts/how-to/how-to-create-a-firebase-project/) one.
-- After creating firebse project, create an android project inside it
+- After creating firebase project, create an android project inside it
 - Generate SHA1 and SHA256 fingerprints and add to the project. Here's how to [do it](https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode)
 - Download the `google-services.json` file and place it inside the app folder (Project View)
 
-#### Enabling Google Signin
+#### Enabling Google Sign in
 
 - Go to the authentication panel from the left menu
-- Enable Google Signin by clicking on it
+- Enable Google Sign in by clicking on it
 - Copy the `web_client_id`
 
 #### Handling keys/credentials inside the project
 
 - Create a file named `keys.xml` inside the `values` directory under `src` -> `/app/src/values/keys.xml`
 - Create a string resource item inside the file and name it `web_client_id`
-- Paste the `web_client_id` you copied from Google Signin
+- Paste the `web_client_id` you copied from Google Sign in
 - It should look like this  
   `<string name="web_client_id">xxxxx-xxxxxxxx.apps.googleusercontent.com</string>`
 
