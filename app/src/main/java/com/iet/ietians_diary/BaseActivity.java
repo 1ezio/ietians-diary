@@ -53,7 +53,7 @@ public class BaseActivity extends AppCompatActivity {
                         break;
                     case R.id.search:
                         bottomNavigationView.getMenu().findItem(R.id.search).setChecked(true);
-                        getFragment(new DashboardFragment());
+                        getFragment(new SearchFragment());
                         break;
                     case R.id.add:
                         bottomNavigationView.getMenu().findItem(R.id.add).setChecked(true);
@@ -65,7 +65,7 @@ public class BaseActivity extends AppCompatActivity {
                         break;
                     case R.id.account:
                         bottomNavigationView.getMenu().findItem(R.id.account).setChecked(true);
-                        getFragment(new DashboardFragment());
+                        getFragment(new AccountFragment());
                         break;
                     default:
                         break;
