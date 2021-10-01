@@ -10,5 +10,10 @@ public class StudyMaterial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_material);
+
+
+
+
+
     }
 }
