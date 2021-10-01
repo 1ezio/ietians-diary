@@ -8,7 +8,7 @@
 - [What is Ietian's Diary](#what-is-ietians-diary)
 - [Prerequisites](#prerequisites)
   - [Git & Github](#git-and-github)
-  - [Local setup](#local-setup)
+  - [Android Studio](#android-studio)
 - [How to contribute?](#how-to-contribute)
 - [Contributors](#contributors)
 
@@ -36,7 +36,7 @@ Since the project was developed by students in their first year, the project cod
 
 Here are some instructions on how to setup git. [![youtube-git](https://img.shields.io/badge/-Youtube-red?style=plastic&logo=youtube)](https://www.youtube.com/watch?v=uaeKhfhYE0U)
 
-### Android Studio (Java)
+### Android Studio
 
 Android Studio is the official Integrated Development Environment (IDE) for Android app development, based on IntelliJ IDEA . On top of IntelliJ's powerful code editor and developer tools, Android Studio offers even more features that enhance your productivity when building Android apps.
 [![Learn more](https://img.shields.io/badge/-Learn%20more-orange?style=plastic)](https://developer.android.com/studio/intro)
