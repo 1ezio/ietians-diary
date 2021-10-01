@@ -9,24 +9,43 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class BaseActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private ImageView accountImage;
+
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
+        mAuth = FirebaseAuth.getInstance();
+
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
         fragmentTransaction.add(R.id.container, new DashboardFragment());
         fragmentTransaction.commit();
+
+        accountImage = findViewById(R.id.ivAccountImg);
 
 
         ColorStateList iconColorStates = new ColorStateList(
@@ -81,6 +100,21 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null)
+        {
+            Glide.with(getApplicationContext()).load(currentUser.getPhotoUrl().toString())
+                    .thumbnail(0.5f)
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(accountImage);
+        }
     }
 
     private void getFragment(Fragment fragment){

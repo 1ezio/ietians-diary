@@ -7,11 +7,57 @@
     android:layout_height="match_parent"
     tools:context=".BaseActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingHorizontal="24dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="5dp"
+        >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAccountImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/ivAccountImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_users"
+            android:scaleType="centerCrop"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/btnNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cvAccountImage"
+            app:layout_constraintBottom_toBottomOf="@id/cvAccountImage"
+            android:src="@drawable/ic_notification_bell"
+            android:background="@android:color/transparent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/clTopBar"
+        android:layout_marginTop="72dp"
+        >
 
     </FrameLayout>
 
