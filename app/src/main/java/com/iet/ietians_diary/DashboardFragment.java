@@ -1,14 +1,22 @@
 package com.iet.ietians_diary;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
+
+import com.iet.ietians_diary.Adapters.DashboardAllFeaturesRecyclerViewAdapter;
+import com.iet.ietians_diary.Models.DashboardAllFeaturesModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,53 +65,36 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    Button toRoad, toSyllabus, toStudyMaterial, toLabAssign, toInternships;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        // Inflate the layout for this fragment
+        RecyclerView dashboard = rootView.findViewById(R.id.allFeatures_recyclerView);
+        dashboard.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false));
+        dashboard.setNestedScrollingEnabled(false);
 
-        toRoad = view.findViewById(R.id.buttonToRoad);
-        toRoad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), SelectDetails.class));
+        ArrayList<DashboardAllFeaturesModel> list = new ArrayList<>();
+        list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
+        list.add(new DashboardAllFeaturesModel("Previous Papers", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
+        list.add(new DashboardAllFeaturesModel("Class", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
+        list.add(new DashboardAllFeaturesModel("Branch", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("Name", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
+        list.add(new DashboardAllFeaturesModel("RollNo.", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
+        list.add(new DashboardAllFeaturesModel("Clg", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
+        list.add(new DashboardAllFeaturesModel("Date", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("DOB", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
+        list.add(new DashboardAllFeaturesModel("Ghost", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
+        list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
+        list.add(new DashboardAllFeaturesModel("Class", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("CS", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
+        list.add(new DashboardAllFeaturesModel("IT", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
+        list.add(new DashboardAllFeaturesModel("Sports", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
+        list.add(new DashboardAllFeaturesModel("Last", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
 
-            }
-        });
+        DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext());
+        dashboard.setAdapter(dashboardAllFeatures);
 
-        toSyllabus=view.findViewById(R.id.buttonToSyllabus);
-        toSyllabus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), Syllabus.class));
-            }
-        });
 
-        toStudyMaterial=view.findViewById(R.id.buttonToStudyMaterial);
-        toStudyMaterial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), StudyMaterial.class));
-            }
-        });
-
-        toLabAssign=view.findViewById(R.id.buttonToLabAssign);
-        toLabAssign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), LabAssignment.class));
-            }
-        });
-
-        toInternships=view.findViewById(R.id.buttonToInternships);
-        toInternships.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), Internship.class));
-            }
-        });
-        return view;
+        return rootView;
     }
 }

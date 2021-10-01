@@ -196,9 +196,13 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btn_unfocus.setBackground(getResources().getDrawable(R.drawable.dw_select_details_bg));
 
 
+
         btn_focus.setTextColor(getResources().getColor(R.color.peach_red_400));
         //btn_focus.setBackgroundColor(Color.rgb(3, 106, 150));
         btn_focus.setBackground(getResources().getDrawable(R.drawable.dw_select_details_bg_pink));
         this.btn_unfocuss = btn_focus;
+
+
+
     }
 }

@@ -77,7 +77,7 @@ public class SignIn extends AppCompatActivity {
         {
             updateUI(currentUser);
         }
-    }
+    } 
 
     // Activity result when user signs in
     @Override

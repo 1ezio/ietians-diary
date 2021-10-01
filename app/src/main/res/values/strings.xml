@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ietians-diary</string>
+    <string name="app_name">Ietians Diary</string>
     <string name="sign_in_hero_text">Let\'s get you started,\n Sign in below to continue.</string>
     <string name="button_text">Sign In with Google</string>
     <string name="terms_and_conditions_1">*By signing in you agree to our </string>
@@ -25,5 +25,6 @@
     <string name="to_studymaterial">toStudyMaterial</string>
     <string name="to_labassignments">toLabAssignments</string>
     <string name="to_internships">toInternships</string>
+    <string name="all_features">ALL FEATURES</string>
 
 </resources>
