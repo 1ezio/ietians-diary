@@ -17,4 +17,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="iet">Hello IET</string>
+    <string name="syllabus_description">Lorem Ipsum is \nsimpledummy text.</string>
+    <string name="discussion_form">Discussion Forum</string>
+    <string name="interview">interviews</string>
+    <string name="exams">exams</string>
+    <string name="join_now">Join Now</string>
+    <string name="new_roadmaps">New Roadmaps</string>
+    <string name="to_roadmap">toRoadmap</string>
+    <string name="to_syllabus">toSyllabus</string>
+    <string name="to_studymaterial">toStudyMaterial</string>
+    <string name="to_labassignments">toLabAssignments</string>
+    <string name="to_internships">toInternships</string>
 </resources>
