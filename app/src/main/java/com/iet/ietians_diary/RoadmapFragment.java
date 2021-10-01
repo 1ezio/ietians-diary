@@ -93,10 +93,7 @@ public class RoadmapFragment extends Fragment {
         RoadmapRecyclerViewAdapter RoadmapAdapter = new RoadmapRecyclerViewAdapter(list, getContext());
         roadmap.setAdapter(RoadmapAdapter);
 
-//        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-//        roadmap.setLayoutManager(staggeredGridLayoutManager);
 
-        // Inflate the layout for this fragment
         return rootView;
     }
 }
