@@ -21,12 +21,11 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
     ArrayList<DashboardAllFeaturesModel> list;
     Context context;
     private clickListner mclicklistner;
-
     public DashboardAllFeaturesRecyclerViewAdapter(ArrayList<DashboardAllFeaturesModel> list, Context context, clickListner mclicklistner) {
         this.list = list;
         this.context = context;
         this.mclicklistner = mclicklistner;
-
+    }
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -73,11 +72,13 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         }
 
     }
-    public  interface clickListner{
-        void clickListner(int position);
+
+        public  interface clickListner{
+            void clickListner(int position);
         }
 
     }
 
 
-}
+
+
