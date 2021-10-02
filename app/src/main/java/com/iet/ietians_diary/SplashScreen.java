@@ -8,14 +8,13 @@ import android.os.Handler;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private final int SPLASH_SCREEN_DURATION = 3000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        int SPLASH_SCREEN_DURATION = 3000;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
-        android:background="@drawable/feature_icon_bg">
+        android:background="@drawable/feature_icon_bg_blue">
 
     <ImageView
         android:id="@+id/ivFeatureImage"
@@ -59,7 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/llFeatureImageBG"
         app:layout_constraintBottom_toBottomOf="@+id/llFeatureImageBG"
-        android:layout_marginEnd="17dp"
         android:src="@drawable/ic_square_next"
         android:background="@android:color/transparent"/>
 
