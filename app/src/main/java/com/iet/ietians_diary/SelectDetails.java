@@ -21,15 +21,12 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
 
     FirebaseDatabase database ;
 
-
-
     Button btnNext;
     private Button[] btnb = new Button[6];
 
     private Button[] btns = new Button[8];
 
     private int selected_btnb_id, selected_btns_id;
-
 
 
     private String selected_btnb, selected_btns;
@@ -43,6 +40,12 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
             R.id.btnSelectBranchETC,
             R.id.btnSelectBranchIT,
             R.id.btnSelectBranchMechanical};
+                            R.id.btnSelectBranchCS,
+                            R.id.btnSelectBranchCivil,
+                            R.id.btnSelectBranchEI,
+                            R.id.btnSelectBranchETC,
+                            R.id.btnSelectBranchIT,
+                            R.id.btnSelectBranchMechanical};
 
     private int[] btns_id = {
             R.id.btnSelectSemester1st,
@@ -68,8 +71,6 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         database= FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("Syllabi");
 
-
-
         for(int i = 0; i < btnb.length; i++){
             btnb[i] = (Button) findViewById(btnb_id[i]);
             //btn[i].setBackgroundColor(Color.rgb(207, 207, 207));
@@ -86,8 +87,6 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
 
         btn_unfocusb = btnb[0];
         btn_unfocuss = btns[0];
-
-
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,8 +146,6 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
 
                     }
                 });
-
-
             }
         });
 
@@ -249,6 +246,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                 break;
 
         }
+       }
 
     }
 

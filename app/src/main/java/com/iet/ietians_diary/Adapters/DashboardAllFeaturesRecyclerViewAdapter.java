@@ -26,7 +26,6 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         this.list = list;
         this.context = context;
         this.mclicklistner = mclicklistner;
-    }
 
     @NonNull
     @Override
@@ -50,7 +49,6 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
     public int getItemCount() { return list.size(); }
 
 
-
     public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView title, description;
         LinearLayout linearLayout;
@@ -64,7 +62,6 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
             description = itemView.findViewById(R.id.tvFeatureDesc);
             linearLayout = itemView.findViewById(R.id.llFeatureImageBG);
             icon = itemView.findViewById(R.id.ivFeatureImage);
-
             this.clickListnerObject = clickListnerObject;
 
             itemView.setOnClickListener(this);
@@ -78,6 +75,7 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
     }
     public  interface clickListner{
         void clickListner(int position);
+        }
 
     }
 

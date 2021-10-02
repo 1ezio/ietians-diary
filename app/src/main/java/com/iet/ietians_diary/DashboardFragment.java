@@ -2,6 +2,7 @@ package com.iet.ietians_diary;
 
 
 import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -103,7 +104,5 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
     public void clickListner(int position) {
         Intent i = new Intent(getContext(), SelectDetails.class);
         startActivity(i);
-
-
     }
 }
