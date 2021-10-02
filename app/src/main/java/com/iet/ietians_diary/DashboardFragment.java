@@ -1,6 +1,8 @@
 package com.iet.ietians_diary;
 
 
+import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,7 +25,7 @@ import java.util.ArrayList;
  * Use the {@link DashboardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment implements DashboardAllFeaturesRecyclerViewAdapter.clickListner {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -91,10 +93,16 @@ public class DashboardFragment extends Fragment {
         list.add(new DashboardAllFeaturesModel("Sports", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
         list.add(new DashboardAllFeaturesModel("Last", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
 
-        DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext());
+        DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext(),this  );
         dashboard.setAdapter(dashboardAllFeatures);
 
 
         return rootView;
+    }
+
+    @Override
+    public void clickListner(int position) {
+        Intent i = new Intent(getContext(), SelectDetails.class);
+        startActivity(i);
     }
 }

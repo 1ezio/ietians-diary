@@ -1,5 +1,7 @@
 package com.iet.ietians_diary;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -9,8 +11,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SelectDetails extends AppCompatActivity implements View.OnClickListener {
+
+    FirebaseDatabase database ;
 
     Button btnNext;
     private Button[] btnb = new Button[6];
@@ -25,6 +34,12 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
     private Button btn_unfocusb;
     private Button btn_unfocuss;
     private int[] btnb_id = {
+            R.id.btnSelectBranchCS,
+            R.id.btnSelectBranchCivil,
+            R.id.btnSelectBranchEI,
+            R.id.btnSelectBranchETC,
+            R.id.btnSelectBranchIT,
+            R.id.btnSelectBranchMechanical};
                             R.id.btnSelectBranchCS,
                             R.id.btnSelectBranchCivil,
                             R.id.btnSelectBranchEI,
@@ -53,6 +68,9 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btnNext = findViewById(R.id.btnNextFromSelectBranch);
         //btnNext.setEnabled(false);
 
+        database= FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("Syllabi");
+
         for(int i = 0; i < btnb.length; i++){
             btnb[i] = (Button) findViewById(btnb_id[i]);
             //btn[i].setBackgroundColor(Color.rgb(207, 207, 207));
@@ -70,11 +88,64 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btn_unfocusb = btnb[0];
         btn_unfocuss = btns[0];
 
-
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_LONG).show();
+
+                if (selected_btns.equals("1st")){
+                    selected_btns = "sem-1";
+                }
+                if (selected_btns.equals("2nd")){
+                    selected_btns = "sem-2";
+                }
+                if (selected_btns.equals("3rd")){
+                    selected_btns = "sem-3";
+                }
+                if (selected_btns.equals("4th")){
+                    selected_btns = "sem-4";
+                }
+                if (selected_btns.equals("5th")){
+                    selected_btns = "sem-5";
+                }
+                if (selected_btns.equals("6th")){
+                    selected_btns = "sem-6";
+                }
+                if (selected_btns.equals("7th")){
+                    selected_btns = "sem-7";
+                }
+                if (selected_btns.equals("8th")){
+                    selected_btns = "sem-8";
+                }
+
+                reference.child(selected_btnb.toLowerCase()).child(selected_btns).addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 
@@ -174,6 +245,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                 selected_btns = tmpbtn.getText().toString();
                 break;
 
+        }
        }
 
     }
