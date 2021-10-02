@@ -9,8 +9,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SelectDetails extends AppCompatActivity implements View.OnClickListener {
+
+    FirebaseDatabase database ;
+
+
 
     Button btnNext;
     private Button[] btnb = new Button[6];
@@ -18,6 +24,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
     private Button[] btns = new Button[8];
 
     private int selected_btnb_id, selected_btns_id;
+
 
 
     private String selected_btnb, selected_btns;
@@ -53,6 +60,11 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btnNext = findViewById(R.id.btnNextFromSelectBranch);
         //btnNext.setEnabled(false);
 
+        database= FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("Syllabi");
+
+
+
         for(int i = 0; i < btnb.length; i++){
             btnb[i] = (Button) findViewById(btnb_id[i]);
             //btn[i].setBackgroundColor(Color.rgb(207, 207, 207));
@@ -75,6 +87,9 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_LONG).show();
+
+
+
             }
         });
 
