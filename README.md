@@ -115,7 +115,7 @@ Here's how to generate a [Personal Access Token](https://docs.github.com/en/auth
 
 ### Tech Stack
 
-[![android](https://www.vectorlogo.zone/logos/android/android-ar21.svg)](https://developer.android.com)
+[![android](https://www.vectorlogo.zone/logos/android/android-icon.svg)](https://developer.android.com)
 [![firebase](https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg)](https://firebase.google.com/)
 
 ### Contributors
