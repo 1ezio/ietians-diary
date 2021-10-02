@@ -1,5 +1,7 @@
 package com.iet.ietians_diary;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -9,6 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -83,11 +88,65 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btn_unfocuss = btns[0];
 
 
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_LONG).show();
 
+                if (selected_btns.equals("1st")){
+                    selected_btns = "sem-1";
+                }
+                if (selected_btns.equals("2nd")){
+                    selected_btns = "sem-2";
+                }
+                if (selected_btns.equals("3rd")){
+                    selected_btns = "sem-3";
+                }
+                if (selected_btns.equals("4th")){
+                    selected_btns = "sem-4";
+                }
+                if (selected_btns.equals("5th")){
+                    selected_btns = "sem-5";
+                }
+                if (selected_btns.equals("6th")){
+                    selected_btns = "sem-6";
+                }
+                if (selected_btns.equals("7th")){
+                    selected_btns = "sem-7";
+                }
+                if (selected_btns.equals("8th")){
+                    selected_btns = "sem-8";
+                }
+
+                reference.child(selected_btnb.toLowerCase()).child(selected_btns).addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
 
             }
