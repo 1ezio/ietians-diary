@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.iet.ietians_diary.Models.DashboardAllFeaturesModel;
@@ -52,6 +53,7 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         TextView title, description;
         LinearLayout linearLayout;
         ImageView icon;
+        //ConstraintLayout constraintLayout;
 
         clickListner clickListnerObject;
         public viewHolder(@NonNull View itemView , clickListner clickListnerObject) {
@@ -62,6 +64,7 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
             linearLayout = itemView.findViewById(R.id.llFeatureImageBG);
             icon = itemView.findViewById(R.id.ivFeatureImage);
             this.clickListnerObject = clickListnerObject;
+            //constraintLayout = itemView.findViewById(R.id.allfeaturecontraintlayout);
 
             itemView.setOnClickListener(this);
 
