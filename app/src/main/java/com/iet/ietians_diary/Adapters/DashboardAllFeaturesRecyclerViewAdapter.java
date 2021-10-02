@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.iet.ietians_diary.Models.DashboardAllFeaturesModel;
@@ -21,12 +22,11 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
     ArrayList<DashboardAllFeaturesModel> list;
     Context context;
     private clickListner mclicklistner;
-
     public DashboardAllFeaturesRecyclerViewAdapter(ArrayList<DashboardAllFeaturesModel> list, Context context, clickListner mclicklistner) {
         this.list = list;
         this.context = context;
         this.mclicklistner = mclicklistner;
-
+    }
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,6 +53,7 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         TextView title, description;
         LinearLayout linearLayout;
         ImageView icon;
+        //ConstraintLayout constraintLayout;
 
         clickListner clickListnerObject;
         public viewHolder(@NonNull View itemView , clickListner clickListnerObject) {
@@ -63,6 +64,7 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
             linearLayout = itemView.findViewById(R.id.llFeatureImageBG);
             icon = itemView.findViewById(R.id.ivFeatureImage);
             this.clickListnerObject = clickListnerObject;
+            //constraintLayout = itemView.findViewById(R.id.allfeaturecontraintlayout);
 
             itemView.setOnClickListener(this);
 
@@ -73,11 +75,13 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         }
 
     }
-    public  interface clickListner{
-        void clickListner(int position);
+
+        public  interface clickListner{
+            void clickListner(int position);
         }
 
     }
 
 
-}
+
+

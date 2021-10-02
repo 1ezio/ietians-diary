@@ -40,13 +40,6 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
             R.id.btnSelectBranchETC,
             R.id.btnSelectBranchIT,
             R.id.btnSelectBranchMechanical};
-                            R.id.btnSelectBranchCS,
-                            R.id.btnSelectBranchCivil,
-                            R.id.btnSelectBranchEI,
-                            R.id.btnSelectBranchETC,
-                            R.id.btnSelectBranchIT,
-                            R.id.btnSelectBranchMechanical};
-
     private int[] btns_id = {
             R.id.btnSelectSemester1st,
             R.id.btnSelectSemester2nd,
@@ -122,7 +115,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -248,7 +241,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         }
        }
 
-    }
+ //   }
 
     private void setFocusb(Button btn_unfocus, Button btn_focus){
         btn_unfocus.setTextColor(getResources().getColor(R.color.text_black_200));
