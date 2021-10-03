@@ -84,7 +84,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_SHORT).show();
 
                 if (selected_btns.equals("1st")){
                     selected_btns = "sem-1";
@@ -115,7 +115,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
