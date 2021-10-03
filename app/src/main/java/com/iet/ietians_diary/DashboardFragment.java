@@ -13,10 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.iet.ietians_diary.Adapters.DashboardAllFeaturesRecyclerViewAdapter;
+import com.iet.ietians_diary.Adapters.DashboardNewFeaturesRecyclerViewAdapter;
 import com.iet.ietians_diary.Models.DashboardAllFeaturesModel;
+import com.iet.ietians_diary.Models.DashboardNewFeaturesModel;
 
 import java.util.ArrayList;
 
@@ -67,13 +72,35 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         }
     }
 
+    private FirebaseAuth mAuth;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        RecyclerView dashboard = rootView.findViewById(R.id.allFeatures_recyclerView);
-        dashboard.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false));
-        dashboard.setNestedScrollingEnabled(false);
+        TextView name = rootView.findViewById(R.id.tvName);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        name.setText(currentUser.getDisplayName());
+
+
+        RecyclerView allFeatures = rootView.findViewById(R.id.allFeatures_recyclerView);
+        RecyclerView newFeatures = rootView.findViewById(R.id.newFeatures_recyclerView);
+
+        newFeatures.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        newFeatures.setNestedScrollingEnabled(false);
+
+        ArrayList<DashboardNewFeaturesModel> list1 = new ArrayList<>();
+        list1.add(new DashboardNewFeaturesModel("Discussion Forum", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_blue, R.drawable.feature_discussion_forum_textview_bg_blue));
+        list1.add(new DashboardNewFeaturesModel("Interview", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_green, R.drawable.feature_discussion_forum_textview_bg_green));
+        list1.add(new DashboardNewFeaturesModel("Comments", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_grey, R.drawable.feature_discussion_forum_textview_bg_grey));
+        list1.add(new DashboardNewFeaturesModel("RoadMaps", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_red, R.drawable.feature_discussion_forum_textview_bg_red));
+
+        DashboardNewFeaturesRecyclerViewAdapter dashboardNewFeatures = new DashboardNewFeaturesRecyclerViewAdapter(list1, getContext());
+        newFeatures.setAdapter(dashboardNewFeatures);
+
+        allFeatures.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false));
+        allFeatures.setNestedScrollingEnabled(false);
 
         ArrayList<DashboardAllFeaturesModel> list = new ArrayList<>();
         list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
@@ -84,17 +111,9 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         list.add(new DashboardAllFeaturesModel("RollNo.", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
         list.add(new DashboardAllFeaturesModel("Clg", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
         list.add(new DashboardAllFeaturesModel("Date", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
-        list.add(new DashboardAllFeaturesModel("DOB", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
-        list.add(new DashboardAllFeaturesModel("Ghost", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
-        list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
-        list.add(new DashboardAllFeaturesModel("Class", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
-        list.add(new DashboardAllFeaturesModel("CS", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
-        list.add(new DashboardAllFeaturesModel("IT", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
-        list.add(new DashboardAllFeaturesModel("Sports", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
-        list.add(new DashboardAllFeaturesModel("Last", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
 
         DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext(),this  );
-        dashboard.setAdapter(dashboardAllFeatures);
+        allFeatures.setAdapter(dashboardAllFeatures);
 
 
         return rootView;

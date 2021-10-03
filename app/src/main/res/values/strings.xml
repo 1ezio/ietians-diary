@@ -26,5 +26,7 @@
     <string name="to_labassignments">toLabAssignments</string>
     <string name="to_internships">toInternships</string>
     <string name="all_features">ALL FEATURES</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="new_features">NEW FEATURES</string>
 
 </resources>
