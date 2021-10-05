@@ -21,6 +21,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
 
     FirebaseDatabase database ;
 
+    String s = getIntent().getStringExtra("position");
     Button btnNext;
     private Button[] btnb = new Button[6];
 
@@ -116,6 +117,8 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                             Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+                            //TODO Selecting Choices and Redirect accordingly
+
                         }
                     }
 
