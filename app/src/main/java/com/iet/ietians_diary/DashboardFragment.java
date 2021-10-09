@@ -94,8 +94,8 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         ArrayList<DashboardNewFeaturesModel> list1 = new ArrayList<>();
         list1.add(new DashboardNewFeaturesModel("Discussion Forum", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_blue, R.drawable.feature_discussion_forum_textview_bg_blue));
         list1.add(new DashboardNewFeaturesModel("Interview", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_green, R.drawable.feature_discussion_forum_textview_bg_green));
-        list1.add(new DashboardNewFeaturesModel("Comments", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_grey, R.drawable.feature_discussion_forum_textview_bg_grey));
-        list1.add(new DashboardNewFeaturesModel("RoadMaps", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_red, R.drawable.feature_discussion_forum_textview_bg_red));
+        list1.add(new DashboardNewFeaturesModel("Doubts", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_grey, R.drawable.feature_discussion_forum_textview_bg_grey));
+        list1.add(new DashboardNewFeaturesModel("Upload", "Lorem Ipsum is simply dummy \ntext of the printing and \ntypesetting industry.", R.drawable.feature_discussion_forum_bg_red, R.drawable.feature_discussion_forum_textview_bg_red));
 
         DashboardNewFeaturesRecyclerViewAdapter dashboardNewFeatures = new DashboardNewFeaturesRecyclerViewAdapter(list1, getContext());
         newFeatures.setAdapter(dashboardNewFeatures);
@@ -105,13 +105,11 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
 
         ArrayList<DashboardAllFeaturesModel> list = new ArrayList<>();
         list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
-        list.add(new DashboardAllFeaturesModel("Previous Papers", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
-        list.add(new DashboardAllFeaturesModel("Class", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
-        list.add(new DashboardAllFeaturesModel("Branch", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
-        list.add(new DashboardAllFeaturesModel("Name", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
-        list.add(new DashboardAllFeaturesModel("RollNo.", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
-        list.add(new DashboardAllFeaturesModel("Clg", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
-        list.add(new DashboardAllFeaturesModel("Date", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("Notes", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
+        list.add(new DashboardAllFeaturesModel("Books", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
+        list.add(new DashboardAllFeaturesModel("Practical", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("Previous Papers", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
+        list.add(new DashboardAllFeaturesModel("Videos.", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
 
         DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext(),this  );
         allFeatures.setAdapter(dashboardAllFeatures);
