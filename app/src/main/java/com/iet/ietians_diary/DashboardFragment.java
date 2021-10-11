@@ -82,6 +82,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         TextView name = rootView.findViewById(R.id.tvName);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        name.setVisibility(View.VISIBLE);
         name.setText(currentUser.getDisplayName());
 
 
@@ -122,7 +123,9 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
     public void clickListner(int position) {
         String s= String.valueOf(position);
         Intent i = new Intent(getContext(), SelectDetails.class);
-        Toast.makeText(getContext(), s,  Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), s,  Toast.LENGTH_SHORT).show();
+        //Bundle extras = getActivity().getIntent().getExtras();
+        //String name = extras.getString("title");
         i.putExtra("position", s);
         startActivity(i);
 
