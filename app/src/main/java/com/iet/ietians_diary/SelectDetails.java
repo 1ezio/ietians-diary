@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,10 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
 
     FirebaseDatabase database ;
 
-    String s = getIntent().getStringExtra("position");
+//    String s = getIntent().getStringExtra("position");
+
+    //String s = getIntent().getExtras().getString("position");
+
     Button btnNext;
     private Button[] btnb = new Button[6];
 
@@ -57,7 +61,14 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_select_details);
+
+        Intent intent = getIntent();
+        String s = intent.getStringExtra("position");
+
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
 
         btnNext = findViewById(R.id.btnNextFromSelectBranch);
         //btnNext.setEnabled(false);
@@ -118,7 +129,7 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                             Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
                             //TODO Selecting Choices and Redirect accordingly
-
+                     //       Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                         }
                     }
 
