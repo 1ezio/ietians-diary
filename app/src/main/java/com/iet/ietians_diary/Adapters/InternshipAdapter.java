@@ -19,14 +19,14 @@ import com.iet.ietians_diary.Models.InternshipModel;
 import com.iet.ietians_diary.R;
 
 
-import java.util.List;
+import java.util.ArrayList;
 
 
 public class InternshipAdapter extends RecyclerView.Adapter<InternshipAdapter.InternshipViewHolder> {
     Context context;
-    List<InternshipModel> internshipList;
+    ArrayList<InternshipModel> internshipList;
 
-    public InternshipAdapter(Context context, List<InternshipModel> categoryList) {
+    public InternshipAdapter(Context context, ArrayList<InternshipModel> categoryList) {
     }
 
     @NonNull
@@ -76,7 +76,7 @@ public class InternshipAdapter extends RecyclerView.Adapter<InternshipAdapter.In
             super(itemView);
             companyName = itemView.findViewById(R.id.companyName);
             internRole = itemView.findViewById(R.id.InternshipTitle);
-            description = itemView.findViewById(R.id.intern_desc);
+            description = itemView.findViewById(R.id.InternDesc);
 
 
 

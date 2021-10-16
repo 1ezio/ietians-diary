@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/list_Company_logo" />
 
     <TextView
-        android:id="@+id/intern_desc"
+        android:id="@+id/InternDesc"
         android:layout_width="372dp"
         android:layout_height="99dp"
         android:layout_marginStart="17dp"

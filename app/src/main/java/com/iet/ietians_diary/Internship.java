@@ -8,12 +8,13 @@ import android.os.Bundle;
 import com.iet.ietians_diary.Adapters.InternshipAdapter;
 import com.iet.ietians_diary.Models.InternshipModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Internship extends AppCompatActivity {
 
     private RecyclerView internship_recyler;
-    private List<InternshipModel> internshipList;
+    private ArrayList<InternshipModel> internshipList;
     private InternshipAdapter internshipAdapter;
 
     @Override
