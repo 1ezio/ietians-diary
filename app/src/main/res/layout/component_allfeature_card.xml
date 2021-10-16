@@ -61,6 +61,7 @@
         app:layout_constraintTop_toTopOf="@+id/llFeatureImageBG"
         app:layout_constraintBottom_toBottomOf="@+id/llFeatureImageBG"
         android:src="@drawable/ic_square_next"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent"
+        android:layout_marginEnd="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
