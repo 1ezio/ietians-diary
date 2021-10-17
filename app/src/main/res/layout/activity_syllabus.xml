@@ -25,7 +25,7 @@
         android:padding="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/allSyllabus_recyclerview"
+            android:id="@+id/allSyllabusRecyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
