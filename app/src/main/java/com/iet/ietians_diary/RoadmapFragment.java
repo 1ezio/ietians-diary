@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class RoadmapFragment extends Fragment implements RoadmapRecyclerViewAdapter.clickListner{
 
-    String[] link = {
+    String[] links = {
             "https://roadmap.sh/android",
             "https://roadmap.sh/frontend",
             "https://roadmap.sh/backend",
@@ -74,7 +74,7 @@ public class RoadmapFragment extends Fragment implements RoadmapRecyclerViewAdap
 
     @Override
     public void clickListner(int position) {
-        String url = link[position];
+        String url = links[position];
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(i);
     }
