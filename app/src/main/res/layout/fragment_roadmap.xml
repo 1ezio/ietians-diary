@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="32dp"
-    android:paddingBottom="32dp"
+    android:paddingHorizontal="20dp"
+    android:paddingBottom="22dp"
     tools:context=".RoadmapFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -42,5 +41,7 @@
                 android:overScrollMode="never" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

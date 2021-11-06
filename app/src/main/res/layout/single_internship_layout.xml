@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/google" />
 
     <TextView
-        android:id="@+id/list_title"
+        android:id="@+id/companyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/list_Company_logo" />
 
     <TextView
-        android:id="@+id/list_date"
+        android:id="@+id/InternDesc"
         android:layout_width="372dp"
         android:layout_height="99dp"
         android:layout_marginStart="17dp"
@@ -51,5 +51,5 @@
         android:fontFamily="@font/asap_medium"
         android:text="Role Of The Intern"
         app:layout_constraintStart_toEndOf="@+id/list_Company_logo"
-        app:layout_constraintTop_toBottomOf="@+id/list_title" />
+        app:layout_constraintTop_toBottomOf="@+id/companyName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

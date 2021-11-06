@@ -17,20 +17,22 @@ import com.iet.ietians_diary.R;
 import java.util.ArrayList;
 
 public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecyclerViewAdapter.viewHolder>{
-    
+
     ArrayList<RoadmapModel> list;
     Context context;
+    private clickListner mclicklistner;
 
-    public RoadmapRecyclerViewAdapter(ArrayList<RoadmapModel> list, Context context) {
+    public RoadmapRecyclerViewAdapter(ArrayList<RoadmapModel> list, Context context, clickListner mclicklistner) {
         this.list = list;
         this.context = context;
+        this.mclicklistner = mclicklistner;
     }
 
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.component_roadmap_card, parent,false);
-        return new viewHolder(view);
+        return new viewHolder(view, mclicklistner);
     }
 
     @Override
@@ -45,27 +47,40 @@ public class RoadmapRecyclerViewAdapter extends RecyclerView.Adapter<RoadmapRecy
         else {
             holder.linearLayout.setPadding(16,16,0,16);
         }
+
+
     }
 
     @Override
-    public int getItemCount() {
-        
-        return list.size();
-    }
+    public int getItemCount() {return list.size();}
 
-    public class viewHolder extends RecyclerView.ViewHolder{
+    public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView name;
         ConstraintLayout constraintLayout;
         LinearLayout linearLayout;
+        clickListner clickListnerObject;
 
-        public viewHolder(@NonNull View itemView) {
+        public viewHolder(@NonNull View itemView, clickListner clickListnerObject) {
             super(itemView);
+
             name = itemView.findViewById(R.id.tvName);
             constraintLayout = itemView.findViewById(R.id.clRoadmapCard);
             linearLayout = itemView.findViewById(R.id.llContainer);
+            this.clickListnerObject = clickListnerObject;
+
+            itemView.setOnClickListener(this);
 
         }
 
+        @Override
+        public void onClick(View view) {
+            clickListnerObject.clickListner(getAdapterPosition());
+        }
+    }
+
+    public interface clickListner
+    {
+        void clickListner(int position);
     }
 }
 

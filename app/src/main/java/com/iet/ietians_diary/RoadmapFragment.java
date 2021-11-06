@@ -1,5 +1,7 @@
 package com.iet.ietians_diary;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,58 +19,32 @@ import com.iet.ietians_diary.Models.RoadmapModel;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RoadmapFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class RoadmapFragment extends Fragment {
+public class RoadmapFragment extends Fragment implements RoadmapRecyclerViewAdapter.clickListner{
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    String[] links = {
+            "https://roadmap.sh/android",
+            "https://roadmap.sh/frontend",
+            "https://roadmap.sh/backend",
+            "https://www.geeksforgeeks.org/best-way-to-start-with-competitive-programming-geeksforgeeks-cp-live-course/",
+            "https://workat.tech/general/article/open-source-contribution-guide-xmhf1k601vdj",
+            "https://roadmap.sh/devops",
+            "https://www.geeksforgeeks.org/how-to-become-data-scientist-a-complete-roadmap/",
+            "https://www.kaggle.com/getting-started/174107",
+            "https://medium.com/javarevisited/courses-roadmap-to-dominate-artificial-intelligence-15415e1e333a",
+            "https://www.programmersought.com/article/85573414848/",
+            "https://www.geeksforgeeks.org/how-to-prepare-for-gate-cs-2021/",
+            "https://unacademy.com/class/cat-2021-detailed-roadmap-and-strategy/YIGURO0J",
+    };
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public RoadmapFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RoadmapFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RoadmapFragment newInstance(String param1, String param2) {
-        RoadmapFragment fragment = new RoadmapFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    public RoadmapFragment() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_roadmap, container, false);
 
@@ -77,23 +53,30 @@ public class RoadmapFragment extends Fragment {
         roadmap.setNestedScrollingEnabled(false);
 
         ArrayList<RoadmapModel> list = new ArrayList<>();
-        list.add(new RoadmapModel("Android",R.drawable.feature_roadmap_bg_blue));
-        list.add(new RoadmapModel("Kotlin", R.drawable.feature_roadmap_bg_red));
-        list.add(new RoadmapModel("Java", R.drawable.feature_roadmap_bg_green));
-        list.add(new RoadmapModel("Ruby", R.drawable.feature_roadmap_bg_grey));
-        list.add(new RoadmapModel("Javascript", R.drawable.feature_roadmap_bg_blue));
-        list.add(new RoadmapModel("Apple", R.drawable.feature_roadmap_bg_red));
-        list.add(new RoadmapModel("Google", R.drawable.feature_roadmap_bg_green));
-        list.add(new RoadmapModel("Mango", R.drawable.feature_roadmap_bg_grey));
-        list.add(new RoadmapModel("Microsoft", R.drawable.feature_roadmap_bg_blue));
-        list.add(new RoadmapModel("Dell", R.drawable.feature_roadmap_bg_red));
-        list.add(new RoadmapModel("Amazon", R.drawable.feature_roadmap_bg_green));
-        list.add(new RoadmapModel("Flipkart", R.drawable.feature_roadmap_bg_grey));
+        list.add(new RoadmapModel("Android Development",R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("Frontend Development", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("Backend Development", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("Competitive Programming", R.drawable.feature_roadmap_bg_grey));
+        list.add(new RoadmapModel("Open Source Contribution", R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("DevOps", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("Data Science", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("Machine Learning", R.drawable.feature_roadmap_bg_grey));
+        list.add(new RoadmapModel("Artificial Intelligence", R.drawable.feature_roadmap_bg_blue));
+        list.add(new RoadmapModel("Internet Of Things", R.drawable.feature_roadmap_bg_red));
+        list.add(new RoadmapModel("GATE", R.drawable.feature_roadmap_bg_green));
+        list.add(new RoadmapModel("CAT", R.drawable.feature_roadmap_bg_grey));
 
-        RoadmapRecyclerViewAdapter RoadmapAdapter = new RoadmapRecyclerViewAdapter(list, getContext());
+        RoadmapRecyclerViewAdapter RoadmapAdapter = new RoadmapRecyclerViewAdapter(list, getContext(), this);
         roadmap.setAdapter(RoadmapAdapter);
-
 
         return rootView;
     }
+
+    @Override
+    public void clickListner(int position) {
+        String url = links[position];
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(i);
+    }
+
 }
