@@ -98,67 +98,44 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),   selected_btnb + " \t " + selected_btns, Toast.LENGTH_SHORT).show();
 
-                if (selected_btns.equals("1st")){
-                    selected_btns = "sem-1";
-                }
-                if (selected_btns.equals("2nd")){
-                    selected_btns = "sem-2";
-                }
-                if (selected_btns.equals("3rd")){
-                    selected_btns = "sem-3";
-                }
-                if (selected_btns.equals("4th")){
-                    selected_btns = "sem-4";
-                }
-                if (selected_btns.equals("5th")){
-                    selected_btns = "sem-5";
-                }
-                if (selected_btns.equals("6th")){
-                    selected_btns = "sem-6";
-                }
-                if (selected_btns.equals("7th")){
-                    selected_btns = "sem-7";
-                }
-                if (selected_btns.equals("8th")){
-                    selected_btns = "sem-8";
-                }
+                selected_btns = "sem-" + selected_btns.charAt(0);
 
-                reference.child(selected_btnb.toLowerCase()).child(selected_btns).addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
-                            //TODO Selecting Choices and Redirect accordingly
-                     //       Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                    }
-
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+//                reference.child(selected_btnb.toLowerCase()).child(selected_btns).addChildEventListener(new ChildEventListener() {
+//                    @Override
+//                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                            Toast.makeText(getApplicationContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+//                            //TODO Selecting Choices and Redirect accordingly
+//                     //       Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+                Intent i = new Intent(SelectDetails.this, SubjectSelection.class);
+                i.putExtra("branch", selected_btnb);
+                i.putExtra("sem", selected_btns);
+                startActivity(i);
             }
         });
-
-
-
-
     }
 
     @Override
@@ -274,14 +251,10 @@ public class SelectDetails extends AppCompatActivity implements View.OnClickList
         //btn_unfocus.setBackgroundColor(Color.rgb(207, 207, 207));
         btn_unfocus.setBackground(getResources().getDrawable(R.drawable.dw_select_details_bg));
 
-
-
         btn_focus.setTextColor(getResources().getColor(R.color.peach_red_400));
         //btn_focus.setBackgroundColor(Color.rgb(3, 106, 150));
         btn_focus.setBackground(getResources().getDrawable(R.drawable.dw_select_details_bg_pink));
         this.btn_unfocuss = btn_focus;
-
-
 
     }
 }

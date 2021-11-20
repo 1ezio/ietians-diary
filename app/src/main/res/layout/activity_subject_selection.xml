@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp"
-    android:paddingBottom="22dp"
-    tools:context=".RoadmapFragment">
+    android:paddingTop="22dp"
+    android:paddingBottom="30dp"
+    tools:context=".SubjectSelection">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -22,21 +23,21 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textRoadmap"
+                android:id="@+id/textSelectSubject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/open_sans_bold"
-                android:text="@string/new_roadmaps"
-                android:textAllCaps="true"
-                android:textColor="@color/text_black_200"
+                android:text="@string/select_subject"
+                android:textColor="@color/text_black_300"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/roadmap_recyclerView"
+                android:id="@+id/subject_recylcerview"
                 android:clipToPadding="false"
                 android:clipChildren="false"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:overScrollMode="never" />

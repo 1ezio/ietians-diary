@@ -4,68 +4,69 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.iet.ietians_diary.Models.SelectSyllabusModal;
+import com.iet.ietians_diary.Models.RoadmapModel;
+import com.iet.ietians_diary.Models.SubjectModel;
 import com.iet.ietians_diary.R;
 
 import java.util.ArrayList;
 
 public class SelectSyllabusRecyclerViewAdapter extends RecyclerView.Adapter<SelectSyllabusRecyclerViewAdapter.viewHolder>{
 
+    ArrayList<SubjectModel> list;
     Context context;
-    ArrayList<SelectSyllabusModal> list;
-    private clickListner mclicklistner;
+    private ClickListener mClickListener;
 
-    public SelectSyllabusRecyclerViewAdapter(Context context, ArrayList<SelectSyllabusModal> list, clickListner mclicklistner) {
-        this.context = context;
+    public SelectSyllabusRecyclerViewAdapter(ArrayList<SubjectModel> list, Context context, ClickListener mClickListener) {
         this.list = list;
-        this.mclicklistner = mclicklistner;
+        this.context = context;
+        this.mClickListener = mClickListener;
     }
 
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.component_subject_name, parent,false);
-        return new viewHolder(view, mclicklistner);
+        View view = LayoutInflater.from(context).inflate(R.layout.component_subject, parent,false);
+        return new viewHolder(view, mClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SelectSyllabusRecyclerViewAdapter.viewHolder holder, int position) {
-
-        SelectSyllabusModal model = list.get(position);
-        holder.subjectName.setText(model.getSubjectName());
-
+    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+        SubjectModel model = list.get(position);
+        holder.name.setText(model.getName());
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
-    }
+    public int getItemCount() {return list.size();}
 
-    public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        TextView name;
+        ClickListener clickListenerObject;
 
-        TextView subjectName;
-        clickListner clickListnerObject;
-
-        public viewHolder(@NonNull View itemView, clickListner mclicklistner) {
+        public viewHolder(@NonNull View itemView, ClickListener clickListenerObject) {
             super(itemView);
 
-            subjectName = itemView.findViewById(R.id.tvSubjectNameTitle);
-            this.clickListnerObject = clickListnerObject;
+            name = itemView.findViewById(R.id.tvSubjectName);
+            this.clickListenerObject = clickListenerObject;
 
             itemView.setOnClickListener(this);
         }
 
         @Override
-        public void onClick(View v) { clickListnerObject.clickListner(getAdapterPosition()); }
+        public void onClick(View view) {
+            clickListenerObject.clickListener(getAdapterPosition());
+        }
     }
 
-    public  interface clickListner
+    public interface ClickListener
     {
-        void clickListner(int position);
+        void clickListener(int position);
     }
 }
+
