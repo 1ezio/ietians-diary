@@ -31,7 +31,7 @@ import java.util.ArrayList;
  * Use the {@link DashboardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DashboardFragment extends Fragment implements DashboardAllFeaturesRecyclerViewAdapter.clickListner {
+public class DashboardFragment extends Fragment implements DashboardAllFeaturesRecyclerViewAdapter.ClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -120,7 +120,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
     }
 
     @Override
-    public void clickListner(int position) {
+    public void clickListener(int position) {
         String s= String.valueOf(position);
         Intent i = new Intent(getContext(), SelectDetails.class);
         //Toast.makeText(getContext(), s,  Toast.LENGTH_SHORT).show();
