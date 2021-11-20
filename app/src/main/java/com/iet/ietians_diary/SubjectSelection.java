@@ -9,6 +9,8 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.common.internal.Constants;
@@ -35,6 +37,7 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
     private FirebaseDatabase database;
     private DatabaseReference syllabus;
     private ArrayList<SubjectModel> subjects;
+    private ProgressBar loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
         String branch = intent.getStringExtra("branch");
         String sem = intent.getStringExtra("sem");
 
+        loading = findViewById(R.id.loading);
+        loading.setVisibility(View.VISIBLE);
         subjects = new ArrayList<>();
 
         database= FirebaseDatabase.getInstance();
@@ -74,6 +79,7 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
                         }
                     }
 
+                    loading.setVisibility(View.GONE);
                     selectSyllabusRecyclerViewAdapter =  new SelectSyllabusRecyclerViewAdapter(subjects, getApplicationContext(), SubjectSelection.this);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
                     recyclerView.setAdapter(selectSyllabusRecyclerViewAdapter);
@@ -93,7 +99,6 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
     @Override
     public void clickListener(int position) {
         SubjectModel subject = subjects.get(position);
-//        Toast.makeText(getApplicationContext(), "I was clicked", Toast.LENGTH_SHORT).show();
         String urlString = subject.getUrl();
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
