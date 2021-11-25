@@ -21,7 +21,6 @@
         <activity android:name=".LabAssignment" />
         <activity android:name=".StudyMaterial" />
         <activity android:name=".Syllabus" />
-        <activity android:name=".SelectDetails" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">

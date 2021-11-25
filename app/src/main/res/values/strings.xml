@@ -33,6 +33,8 @@
     <string name="select_subject">Select Subject</string>
     <string name="subject_name">Subject Name</string>
     <string name="select_branch">Select Branch</string>
-    <string name="select_semester">Select Semester</string>
+    <string name="select_sem">Select Semester</string>
+    <string name="submit">Submit</string>
+    <string name="item">Item</string>
 
 </resources>
