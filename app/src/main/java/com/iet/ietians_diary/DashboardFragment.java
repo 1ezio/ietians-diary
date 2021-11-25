@@ -1,6 +1,7 @@
 package com.iet.ietians_diary;
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -13,8 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -115,19 +120,44 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext(),this  );
         allFeatures.setAdapter(dashboardAllFeatures);
 
-
         return rootView;
     }
 
     @Override
     public void clickListener(int position) {
-        String s= String.valueOf(position);
-        Intent i = new Intent(getContext(), SelectDetails.class);
-        //Toast.makeText(getContext(), s,  Toast.LENGTH_SHORT).show();
-        //Bundle extras = getActivity().getIntent().getExtras();
-        //String name = extras.getString("title");
-        i.putExtra("position", s);
-        startActivity(i);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.component_select_details, null);
+        dialogBuilder.setView(dialogView);
+        AlertDialog alertDialog = dialogBuilder.create();
 
+        String[] Select_Branch = new String[] {"CS", "IT", "EI", "ETC", "Mech", "Civil"};
+        ArrayAdapter<String> adapter_branch =  new ArrayAdapter<>(getContext(), R.layout.component_drop_down_item, Select_Branch);
+        AutoCompleteTextView branch = dialogView.findViewById(R.id.selectBranch);
+        branch.setAdapter(adapter_branch);
+
+        String[] Select_Sem = new String[] {"Sem-1", "Sem-2", "Sem-3", "Sem-4", "Sem-5", "Sem-6", "Sem-7", "Sem-8"};
+        ArrayAdapter<String> adapter_sem =  new ArrayAdapter<>(getContext(), R.layout.component_drop_down_item, Select_Sem);
+        AutoCompleteTextView sem = dialogView.findViewById(R.id.selectSem);
+        sem.setAdapter(adapter_sem);
+
+        Button submit = (Button) dialogView.findViewById(R.id.submit);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String Branch = branch.getEditableText().toString();
+                String Sem = sem.getEditableText().toString();
+
+                Intent i = new Intent(getContext(), SubjectSelection.class);
+                i.putExtra("branch", Branch);
+                i.putExtra("sem", Sem);
+                startActivity(i);
+
+                alertDialog.cancel();
+            }
+        });
+        alertDialog.show();
     }
 }
