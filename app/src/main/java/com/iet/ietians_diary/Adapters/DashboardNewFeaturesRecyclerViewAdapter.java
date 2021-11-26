@@ -39,8 +39,8 @@ public class DashboardNewFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         holder.cardName.setText(model.getName());
         holder.description.setText(model.getDescription());
         holder.constraintLayout.setBackgroundResource(model.getBgColor());
-        holder.textView1.setBackgroundResource(model.getBgColorTV());
-        holder.textView2.setBackgroundResource(model.getBgColorTV());
+        //holder.textView1.setBackgroundResource(model.getBgColorTV());
+        //holder.textView2.setBackgroundResource(model.getBgColorTV());
 
         if(position==0){
             holder.constraintLayout1.setPadding(0,16,16,0);
@@ -66,8 +66,8 @@ public class DashboardNewFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
             description = itemView.findViewById(R.id.tvDescription);
             constraintLayout = itemView.findViewById(R.id.newFeatures_constrainLayout);
             constraintLayout1 = itemView.findViewById(R.id.newFeatureContainer);
-            textView1 = itemView.findViewById(R.id.tvInterview);
-            textView2 = itemView.findViewById(R.id.tvExams);
+            //textView1 = itemView.findViewById(R.id.tvInterview);
+            //textView2 = itemView.findViewById(R.id.tvExams);
 
         }
     }
