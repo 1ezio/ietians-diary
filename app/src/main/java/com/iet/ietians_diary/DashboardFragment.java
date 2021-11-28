@@ -98,8 +98,8 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         newFeatures.setNestedScrollingEnabled(false);
 
         ArrayList<DashboardNewFeaturesModel> list1 = new ArrayList<>();
-        list1.add(new DashboardNewFeaturesModel("Discussion Forum", "Have a doubt? \nAsk to your seniors, \ndiscuss with your friends \non a simple chat interface.", R.drawable.feature_discussion_forum_bg_blue, R.drawable.feature_discussion_forum_textview_bg_blue, R.drawable.ic_messages));
-        list1.add(new DashboardNewFeaturesModel("Internship", "Looking for some real world \nexperience, here are some \ninternships, \nthat might help you.", R.drawable.feature_discussion_forum_bg_grey, R.drawable.feature_discussion_forum_textview_bg_grey, R.drawable.ic_internship));
+        list1.add(new DashboardNewFeaturesModel("Discussion Forum", "Have a doubt? Discuss with \nyour friends on a simple \nchat interface.", R.drawable.feature_discussion_forum_bg_blue, R.drawable.feature_discussion_forum_textview_bg_blue, R.drawable.ic_messages));
+        list1.add(new DashboardNewFeaturesModel("Internship", "Looking for some real world \nexperience, here are some \ninternships, that might help \nyou.", R.drawable.feature_discussion_forum_bg_green, R.drawable.feature_discussion_forum_textview_bg_grey, R.drawable.ic_internship));
         list1.add(new DashboardNewFeaturesModel("Upload", "Wanna be one of us?, \nupload the documents \nand contribute to the app.", R.drawable.feature_discussion_forum_bg_red, R.drawable.feature_discussion_forum_textview_bg_red, R.drawable.ic_upload));
 
         DashboardNewFeaturesRecyclerViewAdapter dashboardNewFeatures = new DashboardNewFeaturesRecyclerViewAdapter(list1, getContext());
