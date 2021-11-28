@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +40,9 @@ public class DashboardNewFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         holder.cardName.setText(model.getName());
         holder.description.setText(model.getDescription());
         holder.constraintLayout.setBackgroundResource(model.getBgColor());
-        holder.textView1.setBackgroundResource(model.getBgColorTV());
-        holder.textView2.setBackgroundResource(model.getBgColorTV());
+        holder.icon.setImageResource(model.getImage());
+        //holder.textView1.setBackgroundResource(model.getBgColorTV());
+        //holder.textView2.setBackgroundResource(model.getBgColorTV());
 
         if(position==0){
             holder.constraintLayout1.setPadding(0,16,16,0);
@@ -58,6 +60,7 @@ public class DashboardNewFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
 
         TextView cardName, description, textView1, textView2;
         ConstraintLayout constraintLayout, constraintLayout1;
+        ImageView icon;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,8 +69,9 @@ public class DashboardNewFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
             description = itemView.findViewById(R.id.tvDescription);
             constraintLayout = itemView.findViewById(R.id.newFeatures_constrainLayout);
             constraintLayout1 = itemView.findViewById(R.id.newFeatureContainer);
-            textView1 = itemView.findViewById(R.id.tvInterview);
-            textView2 = itemView.findViewById(R.id.tvExams);
+            icon = itemView.findViewById(R.id.ivIcon);
+            //textView1 = itemView.findViewById(R.id.tvInterview);
+            //textView2 = itemView.findViewById(R.id.tvExams);
 
         }
     }
