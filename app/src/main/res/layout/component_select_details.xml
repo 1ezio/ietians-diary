@@ -12,10 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textColor="@color/text_black_300"
         android:text="Select Details"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/menu_branch"
@@ -63,10 +65,13 @@
 
         <Button
             android:id="@+id/submit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/submit"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:paddingVertical="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/menu_sem"
             app:layout_constraintEnd_toEndOf="parent"/>
