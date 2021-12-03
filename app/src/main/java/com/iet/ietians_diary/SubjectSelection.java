@@ -66,9 +66,8 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
         String chosen = getCategory(chosenOption);
 
         if(branch.toLowerCase().equals("it")){
-            reference = database.getReference(chosen.equals("syllabus") ? "Syllabi/IT/"
-                    + sem.toLowerCase() : "study_material/IT/"
-                    + sem.toLowerCase()+ "/" + chosen);
+            reference = database.getReference(chosen.equals("syllabus") ? "Syllabi/IT/" + sem.toLowerCase()
+                    : "study_material/IT/" + sem.toLowerCase()+ "/" + chosen);
         }else {
             reference = database.getReference(chosen.equals("syllabus") ? "Syllabi/" + branch.toLowerCase() + "/" + sem.toLowerCase()
                     : "study_material/"+ branch.toLowerCase() + "/" + sem.toLowerCase()+ "/" + chosen);
@@ -85,8 +84,13 @@ public class SubjectSelection extends AppCompatActivity implements SelectSyllabu
                         if(obj instanceof Map){
                             Map<String, Object> mapObj = (Map<String, Object>) obj;
                             SubjectModel subject = new SubjectModel();
-                            subject.setName(mapObj.get(chosenOption.equals("syllabus") ? "sname" : "smname").toString());
-                            subject.setUrl(mapObj.get(chosenOption.equals("syllabus") ? "surl" : "smurl").toString());
+                            if(chosen.equals("syllabus")){
+                                subject.setName(mapObj.get("sname").toString());
+                                subject.setUrl(mapObj.get("surl").toString());
+                            }else{
+                                subject.setName(mapObj.get("smname").toString());
+                                subject.setUrl(mapObj.get("smurl").toString());
+                            }
                             subjects.add(subject);
                         }
                     }
