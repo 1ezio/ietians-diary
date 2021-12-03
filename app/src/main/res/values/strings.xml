@@ -27,6 +27,8 @@
     <string name="to_internships">toInternships</string>
     <string name="all_features">ALL FEATURES</string>
     <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
     <string name="new_features">NEW FEATURES</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
