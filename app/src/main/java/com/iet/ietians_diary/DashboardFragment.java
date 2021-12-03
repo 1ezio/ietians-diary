@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,14 @@ import com.iet.ietians_diary.Adapters.DashboardNewFeaturesRecyclerViewAdapter;
 import com.iet.ietians_diary.Models.DashboardAllFeaturesModel;
 import com.iet.ietians_diary.Models.DashboardNewFeaturesModel;
 
+import org.w3c.dom.Text;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,10 +93,26 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         TextView name = rootView.findViewById(R.id.tvName);
+        TextView greetings = rootView.findViewById(R.id.tvGoodMorning);
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         name.setVisibility(View.VISIBLE);
         name.setText(currentUser.getDisplayName());
+
+
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+        Date currentLocalTime = cal.getTime();
+        DateFormat date = new SimpleDateFormat("HH");
+        date.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+
+        int time = Integer.parseInt(date.format(currentLocalTime).toString());
+        if(time >= 0 && time < 12)
+            greetings.setText(R.string.good_morning);
+        else if(time >= 12 && time < 17)
+            greetings.setText(R.string.good_afternoon);
+        else
+            greetings.setText(R.string.good_evening);
 
 
         RecyclerView allFeatures = rootView.findViewById(R.id.allFeatures_recyclerView);
