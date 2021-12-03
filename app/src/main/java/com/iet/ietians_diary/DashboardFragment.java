@@ -99,6 +99,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         FirebaseUser currentUser = mAuth.getCurrentUser();
         name.setVisibility(View.VISIBLE);
         name.setText(currentUser.getDisplayName());
+        String selectedOption = "";
 
 
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
@@ -136,7 +137,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
         list.add(new DashboardAllFeaturesModel("Syllabus", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
         list.add(new DashboardAllFeaturesModel("Notes", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_green));
         list.add(new DashboardAllFeaturesModel("Books", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_grey));
-        list.add(new DashboardAllFeaturesModel("Practical", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
+        list.add(new DashboardAllFeaturesModel("Practicals", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_red));
         list.add(new DashboardAllFeaturesModel("Previous Papers", "Lorem Ipsum is \nsimpledummy text.",R.drawable.ic_syllabus, R.drawable.feature_icon_bg_blue));
 
         DashboardAllFeaturesRecyclerViewAdapter dashboardAllFeatures = new DashboardAllFeaturesRecyclerViewAdapter(list, getContext(),this  );
@@ -146,7 +147,8 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
     }
 
     @Override
-    public void clickListener(int position) {
+    public void clickListener(DashboardAllFeaturesModel FeatureModel) {
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.component_select_details, null);
@@ -175,6 +177,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
                 Intent i = new Intent(getContext(), SubjectSelection.class);
                 i.putExtra("branch", Branch);
                 i.putExtra("sem", Sem);
+                i.putExtra("selectedOption", FeatureModel.getTitle());
                 startActivity(i);
 
                 alertDialog.cancel();

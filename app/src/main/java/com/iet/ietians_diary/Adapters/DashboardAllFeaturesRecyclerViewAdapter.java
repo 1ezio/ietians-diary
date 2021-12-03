@@ -71,13 +71,13 @@ public class DashboardAllFeaturesRecyclerViewAdapter extends RecyclerView.Adapte
         }
         @Override
         public void onClick(View view) {
-            clickListenerObject.clickListener(getAdapterPosition());
+            clickListenerObject.clickListener(list.get(getAdapterPosition()));
         }
 
     }
 
         public  interface ClickListener{
-            void clickListener(int position);
+            void clickListener(DashboardAllFeaturesModel featureModel);
         }
 
     }
