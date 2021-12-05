@@ -88,6 +88,7 @@ public class DashboardFragment extends Fragment implements DashboardAllFeaturesR
 
     private FirebaseAuth mAuth;
 
+    // Stop repainting everytime
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
